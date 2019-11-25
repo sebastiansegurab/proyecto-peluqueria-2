@@ -45,7 +45,8 @@
 								th:href="@{ '/servicio/info/' + ${s.codigo} }"
 								class="btn btn-info"> <i class="fas fa-calendar-alt"></i>
 								Seleccionar Horario
-							</a> <a th:href="@{ / }" class="btn btn-danger"> <i
+							</a> <a sec:authorize="hasAnyRole('ROLE_CLIENTE', 'ROLE_USER', 'ROLE_ADMIN' )"
+									 th:href="@{ / }" class="btn btn-danger"> <i
 								class="fas fa-undo"></i> Cancelar
 							</a>
 						</p>

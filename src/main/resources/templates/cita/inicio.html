@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	
 <head th:replace="layout/layout :: head"></head>
 <style>
 .active:focus {
@@ -70,10 +72,10 @@ body {
 			</tbody>
 		</table>
 		<p align="center">
-			<a  th:href="@{'/cita/export/all'}" class="btn btn-info"> <i class="fas fa-calendar-alt"></i> Exportar</a>
+			<a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{'/cita/export/all'}" class="btn btn-info"> <i class="fas fa-calendar-alt"></i> Exportar</a>
 		</p>
 		<p align="center">
-			<a th:href="@{'/cita/fecha'}" class="btn btn-info"> <i class="far fa-file-alt"></i> Citas por fecha (Enero)</a>	
+			<a sec:authorize="hasRole('ROLE_CLIENTE')"th:href="@{'/cita/fecha'}" class="btn btn-info"> <i class="far fa-file-alt"></i> Citas por fecha (Enero)</a>	
 		</p>
 	
 

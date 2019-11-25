@@ -34,7 +34,7 @@
 							th:href="@{/}">Home <span class="sr-only">(current)</span>
 						</a></li>
 
-						<li sec:authorize="isAuthenticated()" class="nav-item dropdown"><a
+						<li  class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
 							role="button" aria-haspopup="true" aria-expanded="false">Servicio</a>
 
@@ -53,7 +53,8 @@
 									Horario</a> <a sec:authorize="hasRole('ROLE_ADMIN')"
 									class="dropdown-item" th:href="@{/trabajador}">
 									Mantenimiento Peluquero</a> <a
-									sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item"
+									sec:authorize="hasAnyRole('ROLE_PELUQUERO', 'ROLE_ADMIN' )"
+									class="dropdown-item"
 									th:href="@{/cita}"> Citas totales de usuarios</a>
 								<div sec:authorize="hasRole('ROLE_ADMIN')"
 									class="dropdown-divider"></div>
@@ -62,12 +63,12 @@
 
 							</div></li>
 
-						<li sec:authorize="isAuthenticated()" class="nav-item"><a
+						<li sec:authorize="hasAnyRole('ROLE_CLIENTE')" class="nav-item"><a
 							class="nav-link" th:href="@{'/usuario/citas/'}">Mis Citas <i
 								class="fas fa-calendar-week"></i>
 						</a></li>
 
-						<li sec:authorize="isAuthenticated()" class="nav-item"><a
+						<li sec:authorize="hasAnyRole('ROLE_CLIENTE')" class="nav-item"><a
 							class="nav-link" th:href="@{'/usuario/carrito/'}">Compras <i
 								class="fas fa-shopping-cart"></i>
 						</a></li>

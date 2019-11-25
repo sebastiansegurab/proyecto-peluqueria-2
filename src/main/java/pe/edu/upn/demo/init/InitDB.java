@@ -87,14 +87,15 @@ public class InitDB implements CommandLineRunner{
 		
 		admin.setEnable(true);
 		
+		
+		
+
         
         peluquero.addAuthority("ROLE_PELUQUERO");
-    
-        
         admin.addAuthority("ROLE_ADMIN");
         admin.addAuthority("ACCESS_REST1");
         admin.addAuthority("ACCESS_REST2");
-      
+    
         
         Servicio ser1 = new Servicio();
 		ser1.setCodigo(1);
