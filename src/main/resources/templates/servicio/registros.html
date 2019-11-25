@@ -36,11 +36,14 @@
 								
 							<label for="duracion">Duracion</label> <input type="text"
 								class="form-control" placeholder="Duracion min" th:field="*{duracion}">
+								
+								<label for="duracion">Url Imagen</label> <input type="text"
+								class="form-control" placeholder="Url imagen" th:field="*{imagen}">
 						<hr>			
 						<button class="btn btn-lg btn-primary btn-block text-uppercase"
 						type="submit">
 						<i class="fas fa-cart-plus"></i> Grabar  </button>
-						<a th:href="@{ /servicio/nuevoservicio }" class="btn btn-lg btn-danger btn-block text-uppercase">Cancelar</a>
+						<a th:href="@{ /servicio/mantenimiento }" class="btn btn-lg btn-danger btn-block text-uppercase">Cancelar</a>
 								
 						</div>
 					</div>

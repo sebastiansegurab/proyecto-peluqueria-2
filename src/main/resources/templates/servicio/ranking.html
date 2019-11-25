@@ -32,7 +32,7 @@ body {
 				<tr>
 					<th style="text-align: center" scope="col">Codigo</th>
 					<th style="text-align: center" scope="col">Servicio</th>
-					<th style="text-align: center" scope="col">Cantidad</th>
+				
 				</tr>
 			</thead>
 			<tbody th:each="s: ${servicios}">
@@ -42,7 +42,6 @@ body {
 						<img  th:attr="src=@{|/images/${s.imagen}|},title=${s.imagen},alt=${s.imagen}" width="150" height="80"  class="rounded-pill" > 
 						<br><label th:text="${s.nombre}" class="text-black" style="margin-left: 30px" ></label>
 					</td>
-					<td style="text-align: center" th:text="${cantidad}"></td>
 				</tr>
 			</tbody>
 		</table>

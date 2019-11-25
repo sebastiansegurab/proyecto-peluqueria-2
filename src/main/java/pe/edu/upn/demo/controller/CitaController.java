@@ -125,7 +125,7 @@ public class CitaController {
 					
 					model.addAttribute("usuario", opt.get());
 		
-					optional.get().setEst_cita("si");
+					optional.get().setEst_cita("SI");
 					model.addAttribute("cita", optional.get());
 				}
 				

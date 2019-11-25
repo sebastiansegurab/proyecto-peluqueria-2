@@ -77,7 +77,7 @@ public class ServicioController {
 		return "servicio/ranking";
 	}
 
-	@GetMapping("nuevoservicio")
+	@GetMapping("mantenimiento")
 	public String nuevo(Model model) {
 		
 		try {
@@ -86,7 +86,7 @@ public class ServicioController {
 		} catch (Exception e) {
 
 		}
-		return "servicio/nuevoservicio";
+		return "servicio/mantenimiento";
 	}
 	
 	
@@ -137,7 +137,7 @@ public class ServicioController {
 			} 
 			return "servicio";
 		}
-		return "redirect:/servicio/nuevoservicio";
+		return "redirect:/servicio/mantenimiento";
 	}
 	
 	@PostMapping("saveservicio")
@@ -150,7 +150,7 @@ public class ServicioController {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return "redirect:/servicio/nuevoservicio";
+		return "redirect:/servicio/mantenimiento";
 	}
 	
 	
