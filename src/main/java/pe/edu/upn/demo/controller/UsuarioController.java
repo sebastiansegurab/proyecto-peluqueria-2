@@ -167,7 +167,6 @@ public class UsuarioController {
 			} else {
 				usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
 				usuario.addAuthority("ROLE_CLIENTE");
-				
 				usuarioService.save(usuario);
 				notificacionServiceImpl.sendNotificacionRegistro(usuario);
 				status.setComplete();
