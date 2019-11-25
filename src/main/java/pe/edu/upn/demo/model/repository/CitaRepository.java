@@ -23,10 +23,4 @@ public interface CitaRepository extends JpaRepository<Cita, Integer>{
 			+ "WHERE est_cita = 'NO' and cod_u = :cod_u",nativeQuery=true)
 	List<Cita> noPagadas(@Param("cod_u") Long cod_u);
 	
-	@Query(value = "SELECT s.cod_servicio, s.nom_servicio, s.duracion_servicio, s.pre_servicio, s.imagen_servicio, "
-			+ "COUNT(s.cod_servicio) AS cantidad"
-			+ " FROM Cita c, Servicio s WHERE c.cod_servicio = s.cod_servicio "
-			+ "GROUP BY s.cod_servicio, s.nom_servicio, s.duracion_servicio, s.pre_servicio, s.imagen_servicio "
-			+ "ORDER BY cantidad DESC", nativeQuery = true)
-	List<Servicio> ranking();
 }
