@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+	<!-- Header -->
+	<br>
+	<br>
+
+	<div class="bd-example">
+		<div id="carouselExampleCaptions" class="carousel slide"
+			data-ride="carousel">
+				<ol class="carousel-indicators">
+				<li data-target="#carouselExampleCaptions" data-slide-to="0"
+					class="active"></li>
+				<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+				<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img
+						src="https://specchi.com.pe/modules/atelier_homeslider/images/c87773c3a29a670dfeef3ef5e820cc4bbf1a3a1f_SLIDER%20PRINCIPAL%20WEB%20DICIEMBRE.jpg"
+						class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h1>First slide label</h1>
+						<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img
+						src="https://specchi.com.pe/modules/atelier_homeslider/images/65e77bc952f2de62bee0bb08d04b53a56b6f662d_SLIDER%20PRINCIPAL%20WEB%20SPA.jpg"
+						class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h1>No hay nada que una buenas manos y unas tijeras puedan arreglar</h1>
+						<p>Aprovecha nuestros cortes de cabello!!.</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img
+						src="https://specchi.com.pe/modules/atelier_homeslider/images/1d39d787ba294d972e07dc7729df790965c737e7_foto%20nueva%20yaku.jpg"
+						class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h1>De todas las cosas que llevas puesta, la actitud es la más importante</h1>
+						<p>Luce diferente con nevos colores para tu cabello, aprovecha nuestro servicio de teñido.</p>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleCaptions"
+				role="button" data-slide="prev"> <span
+				class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+				class="sr-only">Previous</span>
+			</a> <a class="carousel-control-next" href="#carouselExampleCaptions"
+				role="button" data-slide="next"> <span
+				class="carousel-control-next-icon" aria-hidden="true"></span> <span
+				class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+
+
+	<br>
+	<!-- Page Content -->
+
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-8 mb-5">
+					<h2>¿Quienes Somos?</h2>
+					<hr>
+					<p>¡Para ser irreemplazable, debes buscar ser diferente!</p>
+					<p>La peluqueria Vilma surgió en el año 2007 de la filosofía de
+						crear un espacio calificado para proporcionar servicios de belleza
+						con un espíritu jovial e innovador que caracteriza a su fundadora
+						Vilma Vasquez</p>
+					<p>Poco a poco lograremos ser un referente de la moda en
+						tendencias del sector de Peluquería y Estética, Somos uno de los
+						salones mas exclusivos de SMP.</p>
+
+				</div>
+				<div class="col-md-4 mb-5">
+					<h2>Contactanos</h2>
+					<hr>
+					<address>
+						<br>jiron andahuaylas 551 <br>San Martin de Porras -
+						Lima <br>
+					</address>
+					<address>
+						<abbr title="telefono">telefono fijo :</abbr> (01) 5699801 <br>
+						<strong> sub gerente - diego "el kekes" </strong> <br> <abbr
+							title="Email">E-mail:</abbr> <a href="mailto:#">diegoatl1102@gmail.com</a>
+					</address>
+				</div>
+			</div>
+			<!-- /.row -->
+
+
+			<!-- /.row -->
+
+		</div>
+		<!-- /.container -->
+
+		<!-- Footer -->
+		<footer class="py-5 bg-dark">
+			<div class="container">
+				<p class="m-0 text-center text-white">Copyright &copy; Your
+					Website 2019</p>
+			</div>
+			<!-- /.container -->
+		</footer>
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+		<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

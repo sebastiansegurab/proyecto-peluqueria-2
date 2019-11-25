@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<style>
+.active:focus {
+	background: #f834a1 !important;
+}
+</style>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<hr>
+	<hr>
+	<hr>
+	<!-- Page Content -->
+	<div class="container">
+
+		<!-- Page Heading -->
+		<h1 class="my-4">Editar Usuario</h1>
+
+		<div class="card">
+			<div class="card-header">Editar usuario</div>
+			<div class="card-body">
+
+				<form th:action="@{/usuario/editarsave}" th:object="${usuario}"
+					method="post">
+					<div class="form-row">
+
+						<div class="form-group col-md-3">
+								
+							<label for="nombres">Nombres</label> <input type="text"
+								class="form-control" placeholder="0.0" th:field="*{nombres}">
+
+							<label for="apellidos">Apellidos</label> <input type="text"
+								class="form-control" placeholder="Apellidos"
+								th:field="*{apellidos}">
+								
+								<label for="dni">Dni</label> <input type="text"
+								class="form-control" placeholder="Dni"
+								th:field="*{dni}">
+								
+								<label for="correo">Correo</label> <input type="text"
+								class="form-control" placeholder="Correo"
+								th:field="*{correo}">
+								
+								<label for="password">Contraseña</label> <input type="text"
+								class="form-control" placeholder="Contraseña"
+								th:field="*{password}">
+							<hr>
+							<button class="btn btn-lg btn-primary btn-block text-uppercase"
+								type="submit">
+								<i class="fas fa-cart-plus"></i> Grabar
+							</button>
+							<a th:href="@{ /usuario/perfil }"
+								class="btn btn-lg btn-danger btn-block text-uppercase">Cancelar</a>
+
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
