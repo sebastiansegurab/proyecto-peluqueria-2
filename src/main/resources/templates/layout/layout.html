@@ -52,7 +52,10 @@
 									class="dropdown-item" th:href="@{/horario}"> Mantenimiento
 									Horario</a> <a sec:authorize="hasRole('ROLE_ADMIN')"
 									class="dropdown-item" th:href="@{/trabajador}">
-									Mantenimiento Peluquero</a> <a
+									Mantenimiento Peluquero</a> 
+									<a sec:authorize="hasRole('ROLE_ADMIN')"
+									class="dropdown-item" th:href="@{/usuario/mantenimiento}">
+									Mantenimiento Usuarios</a><a
 									sec:authorize="hasAnyRole('ROLE_PELUQUERO', 'ROLE_ADMIN' )"
 									class="dropdown-item"
 									th:href="@{/cita}"> Citas totales de usuarios</a>
@@ -60,6 +63,8 @@
 									class="dropdown-divider"></div>
 								<a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item"
 									th:href="@{'/servicio/ranking/'}"> Ranking de servicios</a>
+									<a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item"
+									th:href="@{'/trabajador/ranking/'}"> Ranking de trabajador</a>
 
 							</div></li>
 

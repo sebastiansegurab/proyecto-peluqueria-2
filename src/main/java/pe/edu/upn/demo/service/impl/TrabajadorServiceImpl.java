@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import pe.edu.upn.demo.model.entidades.Servicio;
 import pe.edu.upn.demo.model.entidades.Trabajador;
 import pe.edu.upn.demo.model.repository.TrabajadorRepository;
 import pe.edu.upn.demo.service.TrabajadorService;
@@ -52,4 +53,8 @@ public class TrabajadorServiceImpl implements TrabajadorService {
 		return null;
 	}
 
+	@Override
+	public List<Trabajador> ranking() throws Exception {
+		return trabajadorRepository.ranking();
+	}
 }

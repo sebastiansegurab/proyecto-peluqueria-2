@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<style>
+.active:focus {
+	background: #f834a1 !important;
+}
+</style>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<hr>
+	<hr>
+	<hr>
+	<!-- Page Content -->
+	<div class="container">
+
+		<!-- Page Heading -->
+		<h1 class="my-4">Lista Usuarios</h1>
+
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Codigo</th>
+					<th scope="col">Username</th>
+					<th scope="col">Nombres</th>
+					<th scope="col">Apellidos</th>
+					<th scope="col">Correo</th>
+					<th scope="col">Dni</th>
+					<th scope="col">Accion</th>
+				</tr>
+			</thead>
+			<tbody th:each="u: ${usuarios}" >
+				<tr>
+					<th scope="row" th:text="${u.id}"></th>
+					<td th:text="${u.username}"></td>
+					<td th:text="${u.nombres}"></td>
+					<td th:text="${u.apellidos}"></td>
+					<td th:text="${u.correo}"></td>
+					<td th:text="${u.dni}"></td>
+					<td>
+					
+						<a th:href="@{'/usuario/delus/' + ${u.id} }" class="btn btn-danger"> <i class="fas fa-trash-alt"></i> </a>							
+							</td>
+				</tr>
+
+			</tbody>
+		</table>
+		<p align="center">
+				<a th:href="@{ / }" class="btn btn-danger"> <i class="fas fa-undo"></i> Volver
+			</a>
+		</p>
+	</div>
+	<!-- /.container -->
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

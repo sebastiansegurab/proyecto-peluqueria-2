@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import pe.edu.upn.demo.model.entidades.Cita;
-import pe.edu.upn.demo.model.entidades.Servicio;
 
 
 @Repository
@@ -22,5 +21,4 @@ public interface CitaRepository extends JpaRepository<Cita, Integer>{
 	@Query(value="SELECT * FROM cita "
 			+ "WHERE est_cita = 'NO' and cod_u = :cod_u",nativeQuery=true)
 	List<Cita> noPagadas(@Param("cod_u") Long cod_u);
-	
 }

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import pe.edu.upn.demo.model.entidades.Cita;
+import pe.edu.upn.demo.model.entidades.Servicio;
 import pe.edu.upn.demo.model.entidades.Usuario;
 import pe.edu.upn.demo.service.CitaService;
 import pe.edu.upn.demo.service.UsuarioService;
@@ -41,7 +42,7 @@ public class UsuarioController {
 	@Autowired
 	NotificacionServiceImpl notificacionServiceImpl;
 
-	@GetMapping
+	@GetMapping("mantenimiento")
 	public String inicio(Model model) {
 		try {
 			List<Usuario> usuario = usuarioService.findAll();
@@ -49,7 +50,7 @@ public class UsuarioController {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return "usuario/inicio";
+		return "usuario/mantenimiento";
 	}
 
 	@GetMapping("login")
@@ -155,6 +156,27 @@ public class UsuarioController {
 		return "redirect:/usuario/verid";
 	}
 
+	@GetMapping("delus/{id}")
+	public String eliminars(@PathVariable("id") Long id, Model model) {
+		try {
+			Optional<Usuario> optional = usuarioService.findById(id);
+			if(optional.isPresent()) {
+				usuarioService.deleteById(id);
+			}
+		} catch (Exception e) {
+			
+			model.addAttribute("dangerDel", "ERROR - Violación contra el principio de Integridad referencia");
+			try {
+				List<Usuario> usuario = usuarioService.findAll();
+				model.addAttribute("usuario", usuario);
+			} catch (Exception e2) {
+				// TODO: handle exception
+			} 
+			return "usuario";
+		}
+		return "redirect:/usuario/mantenimiento";
+	}
+	
 	@PostMapping("save")
 	public String save(@ModelAttribute("usuario") Usuario usuario, Model model, SessionStatus status) {
 
@@ -167,6 +189,7 @@ public class UsuarioController {
 			} else {
 				usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
 				usuario.addAuthority("ROLE_CLIENTE");
+				
 				usuarioService.save(usuario);
 				notificacionServiceImpl.sendNotificacionRegistro(usuario);
 				status.setComplete();
@@ -174,7 +197,7 @@ public class UsuarioController {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return "redirect:/usuario/login";
+		return "redirect:/usuario/perfil";
 	}
 	
 	@PostMapping("/editarsave")

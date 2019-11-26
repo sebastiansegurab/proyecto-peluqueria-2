@@ -31,8 +31,8 @@ public class NotificacionServiceImpl {
 		SimpleMailMessage mail = new SimpleMailMessage();
 		mail.setTo(usuario.getCorreo());
 		mail.setFrom("estilosvilma@gmail.com");
-		mail.setSubject("CITA REGISTRADA CORRECTAMENTE");
-		mail.setText("Se registro cita correctamente en Estilos & Belleza Integral Vilma\n"
+		mail.setSubject("COMPROBANTE DE PAGO");
+		mail.setText("Se pagó la cita correctamente en Estilos & Belleza Integral Vilma\n"
 				+ "Fecha: " + cita.getFecha() +"\n"
 				+ "Servicio: " + cita.getServicio().getNombre() +"\n"
 				+ "Peluquero: " + cita.getTrabajador().getNombre()+"\n"

@@ -137,7 +137,7 @@ public class ServicioController {
 			} 
 			return "servicio";
 		}
-		return "redirect:/servicio/mantenimiento";
+		return "redirect:/servicio/nuevoservicio";
 	}
 	
 	@PostMapping("saveservicio")

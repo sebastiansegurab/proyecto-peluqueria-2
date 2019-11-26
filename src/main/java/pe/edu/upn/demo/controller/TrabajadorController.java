@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import pe.edu.upn.demo.model.entidades.Servicio;
 import pe.edu.upn.demo.model.entidades.Trabajador;
 import pe.edu.upn.demo.service.TrabajadorService;
 
@@ -36,6 +37,18 @@ public class TrabajadorController {
 		}
 		return "trabajador/inicio";
 	}
+	
+	@GetMapping("ranking")
+	public String ranking(Model model) {
+		try {
+			List<Trabajador> peluquerosRanking = trabajadorService.ranking();
+			model.addAttribute("peluqueros", peluquerosRanking);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return "trabajador/ranking";
+	}
+
 	
 	@GetMapping("registrot")
 	public String registro(Model model) {

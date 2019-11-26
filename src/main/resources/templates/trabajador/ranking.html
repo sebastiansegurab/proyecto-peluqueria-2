@@ -25,22 +25,19 @@ body {
 	<div class="container">
 
 		<!-- Page Heading -->
-		<h1 align="center" class="my-4">Servicios mas solicitados</h1>
+		<h1 align="center" class="my-4">Peluqueros mas solicitados</h1>
 
 		<table class="table ">
 			<thead>
 				<tr>
 					<th style="text-align: center" scope="col">Codigo</th>
-					<th style="text-align: center" scope="col">Servicio</th>
+					<th style="text-align: center" scope="col">Peluquero</th>
 				</tr>
 			</thead>
-			<tbody th:each="s: ${servicios}">
+			<tbody th:each="p: ${peluqueros}">
 				<tr>
-					<td style="text-align: center" th:text="${s.codigo}"></td>
-					<td style="text-align: center">
-						<img  th:attr="src=@{|/images/${s.imagen}|},title=${s.imagen},alt=${s.imagen}" width="150" height="80"  class="rounded-pill" > 
-						<br><label th:text="${s.nombre}" class="text-black" style="margin-left: 30px" ></label>
-					</td>
+					<td style="text-align: center" th:text="${p.codigo}"></td>
+					<td style="text-align: center" th:text="${p.nombre}"></td> 
 				</tr>
 			</tbody>
 		</table>
